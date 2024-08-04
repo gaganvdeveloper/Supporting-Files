@@ -13,6 +13,7 @@
 			<property name="javax.persistence.jdbc.password" value="****" />
 			<property name="hibernate.dialect" 		 value="org.hibernate.dialect.MySQL8Dialect"/>
 			<property name="hibernate.show_sql" 		 value="true" />
+			<property name="hibernate.format_sql" 		 value="true" />
 			<property name="hibernate.hbm2ddl.auto" 	 value="update" />
 			<!-- for caching --> 
 			 <property name="hibernate.cache.use_second_level_cache"  value="true"/>
