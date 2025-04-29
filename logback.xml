@@ -1,29 +1,25 @@
 <configuration>
 
-	<appender name="myConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder>
-			<pattern>
-				%d{yyyy-MM-dd HH:mm:ss} %5level %logger{36} - %msg%n
-			</pattern>	
-		</encoder>
-	</appender>
-	
-	<appender name="myFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender" >
-		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-			<fileNamePattern>HomeController-%d{yyyy-MM-dd_HH:mm}.%i.log</fileNamePattern>
-			<maxFileSize>10MB</maxFileSize>
-			<maxHistory>10</maxHistory>
-		</rollingPolicy>		
-		<encoder>
-			<pattern>
-				%d{yyyy-MM-dd HH:mm:ss} %5level %logger{36} - %msg%n
-			</pattern>
-		</encoder>
-	</appender>
-	
-	<root level="INFO">
-		<appender-ref name="myConsoleAppender" />
-		<appender-ref name="myFileAppender" />
-	</root>
-	
+    <appender name="myConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="myFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>HomeController-%d{yyyy-MM-dd_HH-mm}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="myConsoleAppender" />
+        <appender-ref ref="myFileAppender" />
+    </root>
+
 </configuration>
